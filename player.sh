@@ -42,7 +42,6 @@ if [ -f "conf" ]; then
 	
 	filePath=$1
 	PIN=$2
-	echo "PIN "$PIN
 	moment=$3
 
 	"$keystorePath/exe" "decrypt" "/home/stas/ClionProjects/Kryptografia2.2/conf" $key
@@ -54,7 +53,7 @@ if [ -f "conf" ]; then
 	echo $kPass
 	kPIN=`sed -n 4p conf`
 	echo $kPIN
-	#"$keystorePath/exe" "encrypt" "/home/stas/ClionProjects/Kryptografia2.2/conf" $key
+	"$keystorePath/exe" "encrypt" "/home/stas/ClionProjects/Kryptografia2.2/conf" $key
 	
 	if [ "$kPIN" != "$PIN" ];then	
 		echo "Wrong PIN, bye, bye"
